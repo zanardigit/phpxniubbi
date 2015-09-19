@@ -1,3 +1,5 @@
 <?php
 
-echo "Benvenuti al corso!";
+$message = "Benvenuti al corso!";
+
+echo $message;
