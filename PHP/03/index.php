@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * Concatenazione di stringhe
+ * 03. Concatenazione di stringhe
  */
 
 // Definisco una variabile stringa

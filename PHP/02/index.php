@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * Variabili e costanti
+ * 02. Variabili e costanti
  */
 
 // Definisco una variabile

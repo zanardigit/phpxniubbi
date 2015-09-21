@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * Script di base
+ * 01. Script di base
  */
 
 // Il più semplice comando PHP

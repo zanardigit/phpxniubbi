@@ -2,13 +2,16 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 09. Blocco if e conteggio di un array
+ * 15. Inclusione di file esterno
  */
 
-// Assegnazione
-$course = "Codemaster";
+// Inclusione di un file
+require_once 'functions.php';
 
-// Controllo
+// Meglio ancora, specificando una costante di sistema che rappresenta la cartella corrente
+require_once __DIR__ . '/functions.php';
+
+$course = "Codemaster";
 if ($course == "Codemaster") {
     define("TITLE", "Questo è il corso Codemaster di TAG");
 }
@@ -16,12 +19,10 @@ else {
     define("TITLE", "Questo è un altro corso");
 }
 $message = "Benvenuti al corso!";
-$students = ['Francesco', 'Matteo', 'Marco', 'Patrizia'];
-
-// Conteggio di un array
+$students = getStudents();
 $numberOfStudents = count($students);
+$coffeeCost = getCoffeeCost($numberOfStudents);
 ?>
-
 <html>
     <head>
         <title><?= TITLE ?></title>
@@ -31,12 +32,10 @@ $numberOfStudents = count($students);
         <p>Il numero degli studenti è <?= $numberOfStudents ?></p>
         <h2>Elenco degli studenti</h2>
         <ul>
-            <?php foreach ($students as $student): ?>
-                <li><?= $student ?></li>
-                <li><?= $student ?></li>
-                <li><?= $student ?></li>
-                <li><?= $student ?></li>
+            <?php foreach ($students as $name => $role): ?>
+                <li><strong><?= $name ?></strong> (<?= $role ?>)</li>
             <?php endforeach ?>
         </ul>
+        <p>Il costo totale del caffè è <?= $coffeeCost ?></p>
     </body>
 </html>

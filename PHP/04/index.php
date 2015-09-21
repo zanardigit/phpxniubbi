@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * Tipi di variabili
+ * 04. Tipi di variabili
  */
 
 // Definisco una variabile stringa

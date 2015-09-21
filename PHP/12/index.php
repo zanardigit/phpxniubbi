@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 09. Blocco if e conteggio di un array
+ * 12. Funzione personalizzata
  */
 
 // Assegnazione
@@ -16,12 +16,19 @@ else {
     define("TITLE", "Questo è un altro corso");
 }
 $message = "Benvenuti al corso!";
-$students = ['Francesco', 'Matteo', 'Marco', 'Patrizia'];
+$students = [
+    'Francesco' => 'Programmatore',
+    'Matteo' => 'Programmatore',
+    'Marco' => 'Devops',
+    'Patrizia' => 'Grafica'
+];
 
 // Conteggio di un array
 $numberOfStudents = count($students);
-?>
 
+// Richiamo una funzione personalizzata
+$coffeeCost = getCoffeeCost();
+?>
 <html>
     <head>
         <title><?= TITLE ?></title>
@@ -31,12 +38,21 @@ $numberOfStudents = count($students);
         <p>Il numero degli studenti è <?= $numberOfStudents ?></p>
         <h2>Elenco degli studenti</h2>
         <ul>
-            <?php foreach ($students as $student): ?>
-                <li><?= $student ?></li>
-                <li><?= $student ?></li>
-                <li><?= $student ?></li>
-                <li><?= $student ?></li>
+            <?php foreach ($students as $name => $role): ?>
+                <li><strong><?= $name ?></strong> (<?= $role ?>)</li>
             <?php endforeach ?>
         </ul>
+        <p>Il costo totale del caffè è <?= $coffeeCost ?></p>
     </body>
 </html>
+<?php
+
+// funzione personalizzata
+function getCoffeeCost()
+{
+    $singleCoffeeCost = 1;
+    $numberOfStudents = 4;
+    $totalCost = $singleCoffeeCost * $numberOfStudents;
+
+    return $totalCost;
+}

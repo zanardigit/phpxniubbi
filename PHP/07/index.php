@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * Separazione dell'HTML
+ * 07. Separazione dell'HTML
  */
 
 define("TITLE", "Questo è il corso Codemaster di TAG");

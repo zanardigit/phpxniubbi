@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * Array
+ * 05. Array
  */
 
 // Definisco una variabile stringa
