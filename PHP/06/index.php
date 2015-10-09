@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 06. Altre funzioni per gli array
- * @version 2015-10-09
+ * @version 2015-10-10
  */
 
 // Definisco le variabili di tipo stringa
