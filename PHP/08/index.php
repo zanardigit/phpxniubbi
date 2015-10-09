@@ -3,17 +3,18 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 08. Separazione dell'HTML con comandi abbreviati
+ * @version 2015-10-09
  */
 
-define("TITLE", "Questo è il corso Codemaster di TAG");
-$message = "Benvenuti al corso!";
+$title = "Corso Codemaster";
+$message = "Benvenuti al corso PHP di CodeMaster!";
 $numberOfStudents = 4;
-$students = ['Francesco', 'Matteo', 'Marco', 'Patrizia'];
+$students = array('Francesco', 'Matteo', 'Marco', 'Patrizia');
 ?>
 
 <html>
     <head>
-        <title><?= TITLE ?></title>
+        <title><?= $title ?></title>
     </head>
     <body>
         <h1><?= $message ?></h1>

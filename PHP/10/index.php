@@ -3,11 +3,12 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 10. Ciclo foreach e incremento di variabili numeriche
+ * @version 2015-10-09
  */
 
-define("TITLE", "Questo è il corso Codemaster di TAG");
-$message = "Benvenuti al corso!";
-$students = ['Francesco', 'Matteo', 'Marco', 'Patrizia'];
+$title = "Corso Codemaster";
+$message = "Benvenuti al corso PHP di CodeMaster!";
+$students = array('Francesco', 'Matteo', 'Marco', 'Patrizia');
 
 // Versione estesa
 $numberOfStudents = 0;
@@ -31,7 +32,7 @@ foreach ($students as $student) {
 
 <html>
     <head>
-        <title><?= TITLE ?></title>
+        <title><?= $title ?></title>
     </head>
     <body>
         <h1><?= $message ?></h1>

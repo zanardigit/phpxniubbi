@@ -3,31 +3,32 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 12. Funzione personalizzata
+ * @version 2015-10-09
  */
 
-// Assegnazione
-$course = "Codemaster";
-
-// Controllo
-if ($course == "Codemaster") {
-    define("TITLE", "Questo è il corso Codemaster di TAG");
-}
-else {
-    define("TITLE", "Questo è un altro corso");
-}
-$message = "Benvenuti al corso!";
-$students = [
+$title = "Corso Codemaster";
+$message = "Benvenuti al corso PHP di CodeMaster!";
+$students = array(
     'Francesco' => 'Programmatore',
     'Matteo' => 'Programmatore',
     'Marco' => 'Devops',
     'Patrizia' => 'Grafica'
-];
-
-// Conteggio di un array
+);
 $numberOfStudents = count($students);
 
 // Richiamo una funzione personalizzata
 $coffeeCost = getCoffeeCost();
+
+// funzione personalizzata
+function getCoffeeCost()
+{
+    $singleCoffeeCost = 1;
+    $numberOfStudents = 4;
+    $totalCost = $singleCoffeeCost * $numberOfStudents;
+
+    return $totalCost;
+}
+
 ?>
 <html>
     <head>
@@ -45,14 +46,3 @@ $coffeeCost = getCoffeeCost();
         <p>Il costo totale del caffè è <?= $coffeeCost ?></p>
     </body>
 </html>
-<?php
-
-// funzione personalizzata
-function getCoffeeCost()
-{
-    $singleCoffeeCost = 1;
-    $numberOfStudents = 4;
-    $totalCost = $singleCoffeeCost * $numberOfStudents;
-
-    return $totalCost;
-}

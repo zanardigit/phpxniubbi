@@ -3,33 +3,23 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 11. Array associativo
+ * @version 2015-10-09
  */
 
-// Assegnazione
-$course = "Codemaster";
-
-// Controllo
-if ($course == "Codemaster") {
-    define("TITLE", "Questo è il corso Codemaster di TAG");
-}
-else {
-    define("TITLE", "Questo è un altro corso");
-}
-$message = "Benvenuti al corso!";
-$students = [
+$title = "Corso Codemaster";
+$message = "Benvenuti al corso PHP di CodeMaster!";
+$students = array(
     'Francesco' => 'Programmatore',
     'Matteo' => 'Programmatore',
     'Marco' => 'Devops',
     'Patrizia' => 'Grafica'
-];
-
-// Conteggio di un array
+);
 $numberOfStudents = count($students);
 ?>
 
 <html>
     <head>
-        <title><?= TITLE ?></title>
+        <title><?= $title ?></title>
     </head>
     <body>
         <h1><?= $message ?></h1>

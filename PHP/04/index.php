@@ -3,16 +3,15 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 04. Tipi di variabili
+ * @version 2015-10-09
  */
 
-// Definisco una variabile stringa
+// Definisco le variabili di tipo stringa
 $message = "Benvenuti al corso!";
-
-// Definisco una costante
-define("TITLE", "Questo è il corso Codemaster di TAG");
+$title = "Questo è il corso PHP di CodeMaster";
 
 // Stampo a video la stringa di benvenuto
-echo $message . "<br>" . TITLE . "<hr>";
+echo $message . "<br>" . $title . "<hr>";
 
 // Definisco una variabile numerica
 $numberOfStudents = 4;

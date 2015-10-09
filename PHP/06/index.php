@@ -3,16 +3,15 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 06. Altre funzioni per gli array
+ * @version 2015-10-09
  */
 
-// Definisco una variabile stringa
+// Definisco le variabili di tipo stringa
 $message = "Benvenuti al corso!";
-
-// Definisco una costante
-define("TITLE", "Questo è il corso Codemaster di TAG");
+$title = "Questo è il corso PHP di CodeMaster";
 
 // Stampo a video la stringa di benvenuto
-echo $message . "<br>" . TITLE . "<hr>";
+echo $message . "<br>" . $title . "<hr>";
 
 // Definisco una variabile numerica
 $numberOfStudents = 4;
@@ -21,49 +20,32 @@ $numberOfStudents = 4;
 echo "Numero di studenti: " . $numberOfStudents;
 
 // Definisco un array
-$students = ['Francesco', 'Matteo', 'Marco', 'Patrizia'];
+$students = array('Francesco', 'Matteo', 'Marco', 'Patrizia');
 
 // Stampo l'array intero in un colpo solo con il comando print_r
 echo "<h1>Elenco degli studenti</h1>";
 print_r($students);
 
-// Ottengo il primo elemento, rimuovendolo dall'array
-$missingStudent = array_shift($students);
+// Separatore
+echo "<hr>";
 
-// Stampo il primo studente, poi quelli rimanenti
-echo "<h1>Questo studente se n'è andato: $missingStudent </h1>";
-echo "<h1>Elenco aggiornato degli studenti</h1>";
-print_r($students);
+// Stampo il primo elemento - si parte da 0
+echo "Primo elemento: " . $students[0];
 
-// Reinserisco un elemento in testa all'array
-$newStudent = "Enrico";
-array_unshift($students, $newStudent);
+// Separatore
+echo "<hr>";
 
-// Stampo l'elenco attuale degli studenti
-echo "<h1>Aggiunto utente in testa: $newStudent</h1>";
-echo "<h1>Elenco aggiornato degli studenti</h1>";
-print_r($students);
+// Stampo il terzo elemento
+echo "Terzo elemento: " . $students[2];
 
-// Ottengo l'ultimo elemento, rimuovendolo dall'array
-$anotherMissingStudent = array_pop($students);
-echo "<h1>Anche questo studente se n'è andato: $anotherMissingStudent </h1>";
+echo "<hr>";
 
-// Stampo l'elenco attuale degli studenti
-echo "<h1>Quelli che rimangono</h1>";
-print_r($students);
-
-// Riaggiungo un elemento in coda
-$anotherNewStudent = "Ilaria";
-array_push($students, $anotherNewStudent);
-//
-// Stampo l'array intero in un colpo solo con il comando print_r
-echo "<h1>Aggiunto utente in coda: $anotherNewStudent</h1>";
+// Li stampo tutti, uno per uno, aggiungendo una barra di separazione
 echo "<h1>Elenco definitivo degli studenti</h1>";
-print_r($students);
-
-// Posso anche stamparli uno per uno
-echo "<h1>Elenco definitivo degli studenti</h1>";
-echo $students[0] . "<br>";
-echo $students[1] . "<br>";
-echo $students[2] . "<br>";
-echo $students[3] . "<br>";
+echo $students[0]
+    . " / "
+    . $students[1]
+    . " / "
+    . $students[2]
+    . " / "
+    . $students[3];

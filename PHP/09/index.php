@@ -3,6 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 09. Blocco if e conteggio di un array
+ * @version 2015-10-09
  */
 
 // Assegnazione
@@ -10,13 +11,13 @@ $course = "Codemaster";
 
 // Controllo
 if ($course == "Codemaster") {
-    define("TITLE", "Questo è il corso Codemaster di TAG");
+    $title = "Corso Codemaster";
 }
 else {
-    define("TITLE", "Questo è un altro corso");
+    $title = "Ignoto";
 }
-$message = "Benvenuti al corso!";
-$students = ['Francesco', 'Matteo', 'Marco', 'Patrizia'];
+$message = "Benvenuti al corso PHP di CodeMaster!";
+$students = array('Francesco', 'Matteo', 'Marco', 'Patrizia');
 
 // Conteggio di un array
 $numberOfStudents = count($students);
@@ -24,7 +25,7 @@ $numberOfStudents = count($students);
 
 <html>
     <head>
-        <title><?= TITLE ?></title>
+        <title><?= $title ?></title>
     </head>
     <body>
         <h1><?= $message ?></h1>

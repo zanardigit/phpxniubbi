@@ -7,17 +7,17 @@ header('Content-Type: text/html; charset=utf-8');
 
 require_once __DIR__ . '/functions.php';
 
-$page = filter_input(INPUT_GET, 'page');
 $url = filter_input(INPUT_SERVER, 'http_host');
 if ($url == "http://codemaster.local") {
-    define("TITLE", "Questo è il corso Codemaster di TAG");
+    $title = "Corso Codemaster";
 }
 else {
-    define("TITLE", "Questo è un altro corso");
+    $title = "Ignoto";
 }
 
-$message = "Benvenuti al corso!";
-if (addStudent()) {
+$message = "Benvenuti al corso PHP di CodeMaster!";
+$result = addStudent();
+if ($result == true) {
     $message = "Nuovo studente aggiunto";
 }
 
@@ -26,6 +26,7 @@ $numberOfStudents = count($students);
 $coffeeCost = getCoffeeCost($numberOfStudents);
 setCookies();
 
+$page = filter_input(INPUT_GET, 'page');
 switch ($page) {
     case 'students':
         include __DIR__ . '/students.php';

@@ -3,20 +3,29 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 03. Concatenazione di stringhe
+ * @version 2015-10-09
  */
 
 // Definisco una variabile stringa
 $message = "Benvenuti al corso!";
 
-// Definisco una costante
-define("TITLE", "Questo è il corso Codemaster di TAG");
+// Definisco una nuova variabile
+$title = "Questo è il corso PHP di CodeMaster";
 
-// Creo la stringa completa e la stampo a video
-$fullString = $message . "<br>" . TITLE;
-echo $fullString;
-
-// Stampo un tag HTML
+// Stampo i vari pezzi uno per uno
+echo $message;
 echo "<br>";
+echo $title;
 
-// Stessa cosa ma senza creare una variabile di passaggio
-echo $fullString = $message . "<br>" . TITLE;
+// Separatore
+echo "<hr>";
+
+// Stessa cosa ma uso la concatenazione
+echo $message . "<br>" . $title;
+
+// Separatore
+echo "<hr>";
+
+// Creo una nuova variabile che contiene la stringa completa
+$fullString = $message . "<br>" . $title;
+echo $fullString;
