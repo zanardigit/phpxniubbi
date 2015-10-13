@@ -18,6 +18,7 @@ $message = "Benvenuti al corso!";
 $students = getStudents();
 $numberOfStudents = count($students);
 $coffeeCost = getCoffeeCost($numberOfStudents);
+$_GET['page'] = isset($_GET['page']) ? $_GET['page'] : null;
 
 switch ($_GET['page']) {
     case 'students':
