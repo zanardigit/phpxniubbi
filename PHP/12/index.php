@@ -2,47 +2,52 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 12. Funzione personalizzata
- * @version 2015-10-09
+ * 12. Ciclo foreach e incremento di variabili numeriche
+ * @version 2015-10-13
  */
 
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
-$students = array(
-    'Francesco' => 'Programmatore',
-    'Matteo' => 'Programmatore',
-    'Marco' => 'Devops',
-    'Patrizia' => 'Grafica'
-);
-$numberOfStudents = count($students);
+$students = array('Francesco', 'Matteo', 'Marco', 'Patrizia');
 
-// Richiamo una funzione personalizzata
-$coffeeCost = getCoffeeCost();
+// Versione estesa
+$numberOfStudents = 0;
+foreach ($students as $student) {
+    $numberOfStudents = $numberOfStudents + 1;
+}
 
-// funzione personalizzata
-function getCoffeeCost()
-{
-    $singleCoffeeCost = 1;
-    $numberOfStudents = 4;
-    $totalCost = $singleCoffeeCost * $numberOfStudents;
+// Stessa cosa utilizzando la notazione abbreviata
+$numberOfStudents = 0;
+foreach ($students as $student) {
+    $numberOfStudents += 1;
+}
 
-    return $totalCost;
+// Stessa cosa utilizzando l'operatore di incremento singolo
+$numberOfStudents = 0;
+foreach ($students as $student) {
+    $numberOfStudents ++;
 }
 
 ?>
+
 <html>
     <head>
-        <title><?= TITLE ?></title>
+        <title><?= $title ?></title>
     </head>
     <body>
         <h1><?= $message ?></h1>
         <p>Il numero degli studenti è <?= $numberOfStudents ?></p>
         <h2>Elenco degli studenti</h2>
         <ul>
-            <?php foreach ($students as $name => $role): ?>
-                <li><strong><?= $name ?></strong> (<?= $role ?>)</li>
+            <?php foreach ($students as $student): ?>
+                <li>
+                    <img src="/images/<?= $student ?>.png">
+                    <div class="studente">
+                        <?= $student ?>
+                    </div>
+                    <hr>
+                </li>
             <?php endforeach ?>
         </ul>
-        <p>Il costo totale del caffè è <?= $coffeeCost ?></p>
     </body>
 </html>

@@ -2,30 +2,20 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 19. Sessione
+ * 19. Switch e variabili globali
+ * @version 2015-10-13
  */
 
 require_once __DIR__ . '/functions.php';
 
-$page = filter_input(INPUT_GET, 'page');
-$url = filter_input(INPUT_SERVER, 'http_host');
-if ($url == "http://codemaster.local") {
-    $title = "Corso Codemaster";
-}
-else {
-    $title = "Ignoto";
-}
+$title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
 $students = getStudents();
 $numberOfStudents = count($students);
 $coffeeCost = getCoffeeCost($numberOfStudents);
 
-session_start();
-if (empty($_SESSION['id_visitatore'])) {
-    $_SESSION['id_visitatore'] = rand(100, 999);
-}
-
-switch ($page) {
+// Recupero automaticamente un parametro richiesto nell'indirizzo
+switch ($_GET['page']) {
     case 'students':
         include __DIR__ . '/students.php';
         break;

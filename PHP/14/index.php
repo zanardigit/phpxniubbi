@@ -2,47 +2,33 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 14. Altra funzione personalizzata
+ * 14. Funzione personalizzata
  * @version 2015-10-09
  */
 
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
-$students = getStudents();
+$students = array(
+    'Francesco' => 'Programmatore',
+    'Matteo' => 'Programmatore',
+    'Marco' => 'Devops',
+    'Patrizia' => 'Grafica'
+);
 $numberOfStudents = count($students);
-$coffeeCost = getCoffeeCost($numberOfStudents);
 
-/**
- * Calcola il costo totale del caffè in base al numero di studenti e al costo
- * del singolo caffè
- *
- * @param   int $numberOfStudents
- * @param   int $singleCoffeeCost default 1 se non specificato
- * @return  int
- */
-function getCoffeeCost($numberOfStudents, $singleCoffeeCost = 1)
+// Richiamo una funzione personalizzata
+$coffeeCost = getCoffeeCost();
+
+// funzione personalizzata
+function getCoffeeCost()
 {
+    $singleCoffeeCost = 1;
+    $numberOfStudents = 4;
     $totalCost = $singleCoffeeCost * $numberOfStudents;
 
     return $totalCost;
 }
 
-/**
- * Ottiene l'elenco degli studenti
- *
- * @return array
- */
-function getStudents()
-{
-    $students = [
-        'Francesco' => 'Programmatore',
-        'Matteo' => 'Programmatore',
-        'Marco' => 'Devops',
-        'Patrizia' => 'Grafica'
-    ];
-
-    return $students;
-}
 ?>
 <html>
     <head>

@@ -2,21 +2,38 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 15. Inclusione di file esterno
- * @version 2015-10-09
+ * 15. Funzione personalizzata con parametri
+ * @version 2015-10-13
  */
-
-// Inclusione di un file
-require_once 'functions.php';
-
-// Meglio ancora, specificando una costante di sistema che rappresenta la cartella corrente
-require_once __DIR__ . '/functions.php';
 
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
-$students = getStudents();
+$students = array(
+    'Francesco' => 'Programmatore',
+    'Matteo' => 'Programmatore',
+    'Marco' => 'Devops',
+    'Patrizia' => 'Grafica'
+);
 $numberOfStudents = count($students);
+
+// Richiamo una funzione personalizzata
 $coffeeCost = getCoffeeCost($numberOfStudents);
+
+/**
+ * Calcola il costo totale del caffè in base al numero di studenti e al costo
+ * del singolo caffè
+ *
+ * @param   int $numberOfStudents
+ * @param   int $singleCoffeeCost default 1 se non specificato
+ * @return  int
+ */
+function getCoffeeCost($numberOfStudents, $singleCoffeeCost = 1)
+{
+    $totalCost = $singleCoffeeCost * $numberOfStudents;
+
+    return $totalCost;
+}
+
 ?>
 <html>
     <head>

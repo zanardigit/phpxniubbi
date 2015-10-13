@@ -2,39 +2,32 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 09. Blocco if e conteggio di un array
- * @version 2015-10-09
+ * 09. Separazione dell'HTML
+ * @version 2015-10-13
  */
 
-// Assegnazione
-$course = "Codemaster";
-
-// Controllo
-if ($course == "Codemaster") {
-    $title = "Corso Codemaster";
-}
-else {
-    $title = "Ignoto";
-}
+$title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
+$numberOfStudents = 4;
 $students = array('Francesco', 'Matteo', 'Marco', 'Patrizia');
 
-// Conteggio di un array
-$numberOfStudents = count($students);
+$date = date("d M Y", time());
 ?>
 
 <html>
     <head>
-        <title><?= $title ?></title>
+        <title><?php echo $title ?></title>
+        <p>Oggi è il <?php echo $date ?></p>
     </head>
     <body>
-        <h1><?= $message ?></h1>
-        <p>Il numero degli studenti è <?= $numberOfStudents ?></p>
+        <h1><?php echo $message ?></h1>
+        <p>Il numero degli studenti è <?php echo $numberOfStudents ?></p>
         <h2>Elenco degli studenti</h2>
         <ul>
-            <?php foreach ($students as $student): ?>
-                <li><?= $student ?></li>
-            <?php endforeach ?>
+            <li><?php echo $students[0] ?></li>
+            <li><?php echo $students[1] ?></li>
+            <li><?php echo $students[2] ?></li>
+            <li><?php echo $students[3] ?></li>
         </ul>
     </body>
 </html>

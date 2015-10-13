@@ -2,29 +2,25 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 20. Cookie
+ * 20. Filter input e variabili di ambiente
+ * @version 2015-10-13
  */
 
 require_once __DIR__ . '/functions.php';
 
+// Recupero automaticamente l'indirizzo del sito
 $url = filter_input(INPUT_SERVER, 'http_host');
 if ($url == "http://codemaster.local") {
-    $title = "Corso CodeMaster";
+    $title = "Corso Codemaster";
 }
 else {
     $title = "Ignoto";
 }
+
 $message = "Benvenuti al corso PHP di CodeMaster!";
 $students = getStudents();
 $numberOfStudents = count($students);
 $coffeeCost = getCoffeeCost($numberOfStudents);
-
-if (empty(filter_input(INPUT_COOKIE, 'id_visita'))) {
-    setcookie('id_visita', rand(100, 999));
-}
-if (empty(filter_input(INPUT_COOKIE, 'id_visitatore'))) {
-    setcookie('id_visitatore', rand(100, 999), time() + 60*60*24);
-}
 
 $page = filter_input(INPUT_GET, 'page');
 switch ($page) {

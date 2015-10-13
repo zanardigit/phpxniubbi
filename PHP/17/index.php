@@ -2,9 +2,14 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 17. Switch e variabili globali
+ * 17. Inclusione di file esterno
+ * @version 2015-10-13
  */
 
+// Inclusione di un file
+require_once 'functions.php';
+
+// Meglio ancora, specificando una costante di sistema che rappresenta la cartella corrente
 require_once __DIR__ . '/functions.php';
 
 $title = "Corso Codemaster";
