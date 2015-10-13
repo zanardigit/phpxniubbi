@@ -30,7 +30,7 @@ print_r($students);
 echo "<hr>";
 
 // Stampo il primo elemento - si parte da 0
-echo "Primo elemento: " . $students[0];
+echo "<h1>Primo elemento: " . $students[0] . "</h1>";
 
 // Separatore
 echo "<hr>";
@@ -38,7 +38,11 @@ echo "<hr>";
 // Stampo il terzo elemento
 echo "Terzo elemento: " . $students[2];
 
+// Separatore
 echo "<hr>";
+
+// Stampo il quarto elemento con interpolazione
+echo "Quarto elemento: $students[3]<br>";
 
 // Li stampo tutti, uno per uno, aggiungendo una barra di separazione
 echo "<h1>Elenco definitivo degli studenti</h1>";
@@ -49,3 +53,40 @@ echo $students[0]
     . $students[2]
     . " / "
     . $students[3];
+
+echo "<br>";
+
+// La stessa cosa ma con interpolazione
+echo "$students[0] / $students[1] / $students[2] / $students[3]";
+
+// Separatore
+echo "<hr>";
+
+// Array su più livelli
+$informazioni = array(
+    "PHP",
+    "Milano",
+    array(
+        "Francesco",
+        "Sergio",
+        "Simona",
+        "Matteo",
+        array(
+            'x',
+            'y',
+            'z'
+        )
+    ),
+    array(
+        'a',
+        'b',
+        'c'
+    )
+
+);
+
+// Accedo a un elemento interno
+echo "<hr>";
+echo $informazioni[2][0]; // "Francesco"
+echo $informazioni[3][0]; // "a"
+echo $informazioni[2][4][0]; // "x"
