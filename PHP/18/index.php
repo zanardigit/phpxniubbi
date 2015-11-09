@@ -14,4 +14,4 @@ $students = getStudents();
 $numberOfStudents = count($students);
 $coffeeCost = getCoffeeCost($numberOfStudents);
 
-include __DIR__ . '/home.php';
+require_once __DIR__ . '/home.php';

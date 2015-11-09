@@ -8,6 +8,12 @@ header('Content-Type: text/html; charset=utf-8');
 
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
+//$students = array(
+//    0 => 'Francesco',
+//    1 => 'Matteo',
+//    2 => 'Marco',
+//    3 => 'Patrizia'
+//);
 $students = array(
     'Francesco' => 'Programmatore',
     'Matteo' => 'Programmatore',
@@ -15,6 +21,10 @@ $students = array(
     'Patrizia' => 'Grafica'
 );
 $numberOfStudents = count($students);
+
+echo $students['Francesco']; // 'Programmatore'
+echo $students['Marco']; // 'Devops'
+
 ?>
 
 <html>

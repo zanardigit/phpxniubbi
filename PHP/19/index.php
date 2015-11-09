@@ -14,13 +14,6 @@ $students = getStudents();
 $numberOfStudents = count($students);
 $coffeeCost = getCoffeeCost($numberOfStudents);
 
-// Recupero automaticamente un parametro richiesto nell'indirizzo
-switch ($_GET['page']) {
-    case 'students':
-        include __DIR__ . '/students.php';
-        break;
-
-    case 'home':
-    default:
-        include __DIR__ . '/home.php';
-}
+// Includo il layout richiesto
+$requestedFile = getFileName();
+include $requestedFile;

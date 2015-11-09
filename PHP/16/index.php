@@ -6,12 +6,6 @@ header('Content-Type: text/html; charset=utf-8');
  * @version 2015-10-13
  */
 
-$title = "Corso Codemaster";
-$message = "Benvenuti al corso PHP di CodeMaster!";
-$students = getStudents();
-$numberOfStudents = count($students);
-$coffeeCost = getCoffeeCost($numberOfStudents);
-
 /**
  * Calcola il costo totale del caffè in base al numero di studenti e al costo
  * del singolo caffè
@@ -43,6 +37,13 @@ function getStudents()
 
     return $students;
 }
+
+$title = "Corso Codemaster";
+$message = "Benvenuti al corso PHP di CodeMaster!";
+$students = getStudents();
+$numberOfStudents = count($students);
+$coffeeCost = getCoffeeCost($numberOfStudents);
+
 ?>
 <html>
     <head>

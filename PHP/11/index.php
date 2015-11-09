@@ -42,6 +42,9 @@ $numberOfStudents = count($students);
                 echo "<li>" . $student . "</li>";
             }
             ?>
+            <?php foreach ($students as $student): ?>
+                <li><?= $student ?></li>
+            <?php endforeach ?>
         </ul>
     </body>
 </html>

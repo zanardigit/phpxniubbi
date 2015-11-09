@@ -6,6 +6,11 @@ header('Content-Type: text/html; charset=utf-8');
  * @version 2015-10-13
  */
 
+//include 'functions.php';
+//include_once 'functions.php';
+//require 'functions.php';
+//require_once 'functions.php';
+
 // Inclusione di un file
 require_once 'functions.php';
 

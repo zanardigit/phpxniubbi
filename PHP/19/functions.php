@@ -31,3 +31,25 @@ function getStudents()
 
     return $students;
 }
+
+/**
+ *
+ */
+function getFileName()
+{
+    //$requestedPage = $_GET['page'];
+
+    $requestedPage = filter_input(INPUT_GET, 'page');
+    // results
+
+    $fileName = __DIR__ . "/$requestedPage.php";
+    // /var/www/tag-codemaster/results.php
+
+    if (file_exists($fileName)) {
+        return $fileName;
+    }
+    else {
+        return __DIR__ . "/home.php";
+    }
+
+}
