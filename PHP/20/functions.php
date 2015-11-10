@@ -22,12 +22,31 @@ function getCoffeeCost($numberOfStudents, $singleCoffeeCost = 1)
  */
 function getStudents()
 {
-    $students = [
+    $students = array(
         'Francesco' => 'Programmatore',
         'Matteo' => 'Programmatore',
         'Marco' => 'Devops',
         'Patrizia' => 'Grafica'
-    ];
+    );
 
     return $students;
+}
+
+/**
+ * Restituisce il percorso completo del file da includere in base alla pagina
+ * richiesta. Se tale file non esiste, restituisce il file di default (home).
+ *
+ * @return string
+ */
+function getLayoutFile()
+{
+    $requestedPage = $_GET['page'];
+
+    $layoutFile = "$requestedPage.php";
+
+    if (file_exists($layoutFile)) {
+        return $layoutFile;
+    } else {
+        return "home.php";
+    }
 }

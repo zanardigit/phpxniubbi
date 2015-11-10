@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 10. Separazione dell'HTML con comandi abbreviati
- * @version 2015-10-13
+ * @version 2015-11-09
  */
 
 $title = "Corso Codemaster";
@@ -16,11 +16,12 @@ $date = date("d M Y", time());
 
 <html>
     <head>
+        <meta charset="utf-8">
         <title><?= $title ?></title>
-        <p>Oggi è il <?= $date ?></p>
     </head>
     <body>
         <h1><?= $message ?></h1>
+        <p>Oggi è il <?= $date ?></p>
         <p>Il numero degli studenti è <?= $numberOfStudents ?></p>
         <h2>Elenco degli studenti</h2>
         <ul>

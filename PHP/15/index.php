@@ -3,9 +3,25 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 15. Funzione personalizzata con parametri
- * @version 2015-10-13
+ * @version 2015-11-09
  */
 
+/**
+ * Calcola il costo totale del caffè in base al numero di studenti e al costo
+ * del singolo caffè
+ *
+ * @param   int $numberOfStudents
+ * @param   int $singleCoffeeCost default 1 se non passato come parametro
+ * @return  int
+ */
+function getCoffeeCost($numberOfStudents, $singleCoffeeCost = 1)
+{
+    $totalCost = $singleCoffeeCost * $numberOfStudents;
+
+    return $totalCost;
+}
+
+// Blocco principale del programma
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
 $students = array(
@@ -16,28 +32,14 @@ $students = array(
 );
 $numberOfStudents = count($students);
 
-// Richiamo una funzione personalizzata
+// Richiamo la funzione personalizzata passando un parametro
 $coffeeCost = getCoffeeCost($numberOfStudents);
-
-/**
- * Calcola il costo totale del caffè in base al numero di studenti e al costo
- * del singolo caffè
- *
- * @param   int $numberOfStudents
- * @param   int $singleCoffeeCost default 1 se non specificato
- * @return  int
- */
-function getCoffeeCost($numberOfStudents, $singleCoffeeCost = 1)
-{
-    $totalCost = $singleCoffeeCost * $numberOfStudents;
-
-    return $totalCost;
-}
 
 ?>
 <html>
     <head>
-        <title><?= TITLE ?></title>
+        <meta charset="utf-8">
+        <title><?= $title ?></title>
     </head>
     <body>
         <h1><?= $message ?></h1>

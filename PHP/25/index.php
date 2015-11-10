@@ -2,8 +2,8 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 25. Uso delle classi
- * @version 2015-11-08
+ * 25. Scrivi su CSV
+ * @version 2015-10-13
  */
 
 require_once __DIR__ . '/functions.php';
@@ -24,17 +24,9 @@ if ($result == true) {
 
 $students = getStudents();
 $numberOfStudents = count($students);
-$coffee = new Coffee();
-$coffeeCost = getCost($numberOfStudents);
+$coffeeCost = getCoffeeCost($numberOfStudents);
 setCookies();
 
-$page = filter_input(INPUT_GET, 'page');
-switch ($page) {
-    case 'students':
-        include __DIR__ . '/students.php';
-        break;
-
-    case 'home':
-    default:
-        include __DIR__ . '/home.php';
-}
+// Includo il layout richiesto
+$layoutFile = getLayoutFile();
+include $layoutFile;

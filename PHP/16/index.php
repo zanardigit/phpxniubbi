@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 16. Altra funzione personalizzata
- * @version 2015-10-13
+ * @version 2015-11-09
  */
 
 /**
@@ -38,6 +38,7 @@ function getStudents()
     return $students;
 }
 
+// Blocco principale del programma
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
 $students = getStudents();
@@ -47,7 +48,8 @@ $coffeeCost = getCoffeeCost($numberOfStudents);
 ?>
 <html>
     <head>
-        <title><?= TITLE ?></title>
+        <meta charset="utf-8">
+        <title><?= $title ?></title>
     </head>
     <body>
         <h1><?= $message ?></h1>

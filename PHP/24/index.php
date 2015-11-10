@@ -2,8 +2,8 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 24. Scrivi su CSV
- * @version 2015-10-13
+ * 24. Leggi da CSV
+ * @version 2015-11-09
  */
 
 require_once __DIR__ . '/functions.php';
@@ -15,25 +15,12 @@ if ($url == "http://codemaster.local") {
 else {
     $title = "Ignoto";
 }
-
 $message = "Benvenuti al corso PHP di CodeMaster!";
-$result = addStudent();
-if ($result == true) {
-    $message = "Nuovo studente aggiunto";
-}
-
 $students = getStudents();
 $numberOfStudents = count($students);
 $coffeeCost = getCoffeeCost($numberOfStudents);
 setCookies();
 
-$page = filter_input(INPUT_GET, 'page');
-switch ($page) {
-    case 'students':
-        include __DIR__ . '/students.php';
-        break;
-
-    case 'home':
-    default:
-        include __DIR__ . '/home.php';
-}
+// Includo il layout richiesto
+$layoutFile = getLayoutFile();
+include $layoutFile;

@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 05. Array
- * @version 2015-10-09
+ * @version 2015-11-09
  */
 
 // Definisco le variabili di tipo stringa
@@ -19,7 +19,7 @@ $numberOfStudents = 4;
 // Stampo a video una stringa informativa (notare la conversione automatica della variabile)
 echo "Numero di studenti: " . $numberOfStudents;
 
-// Definisco un array (1: MODO TRADIZIONALE)
+// MODO 1: definisco un array (modo tradizionale)
 $students = array(
     "Francesco",
     "Matteo",
@@ -27,18 +27,15 @@ $students = array(
     "Patrizia"
 );
 
-// Definisco un array (2: MODO TRADIZIONALE SU UNA SOLA RIGA)
+// MODO 2: definisco un array (modo tradizionale su una sola riga)
 $students = array("Francesco", "Matteo", "Marco", "Patrizia");
 
-// Definisco un array (3: NUOVO MODO DA PHP 5.4)
+// MODO 3: definisco un array (nuovo modo da PHP 5.4)
 $students = ["Francesco", "Matteo", "Marco", "Patrizia"];
 
-// Definisco un array (4. PARTO DA UN ARRAY VUOTO E LO RIEMPIO)
+// MODO 4: definisco un array (parto da un array vuoto e lo riempio)
 $students = array();
-$students = [];
-
-// Aggiungo elementi all"array con l"operatore di aggiunta
-$students []= "Francesco";
+$students []= "Francesco"; // Operatore di aggiunta elementi
 $students []= "Matteo";
 $students []= "Marco";
 $students []= "Patrizia";

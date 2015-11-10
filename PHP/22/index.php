@@ -2,15 +2,15 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 22. Cookie
- * @version 2015-10-13
+ * 22. Sessione
+ * @version 2015-11-09
  */
 
 require_once __DIR__ . '/functions.php';
 
-$url = filter_input(INPUT_SERVER, 'http_host');
+$url = filter_input(INPUT_SERVER, 'HTTP_HOST');
 if ($url == "http://codemaster.local") {
-    $title = "Corso CodeMaster";
+    $title = "Corso Codemaster";
 }
 else {
     $title = "Ignoto";
@@ -20,20 +20,11 @@ $students = getStudents();
 $numberOfStudents = count($students);
 $coffeeCost = getCoffeeCost($numberOfStudents);
 
-if (empty(filter_input(INPUT_COOKIE, 'id_visita'))) {
-    setcookie('id_visita', rand(100, 999));
-}
-if (empty(filter_input(INPUT_COOKIE, 'id_visitatore'))) {
-    setcookie('id_visitatore', rand(100, 999), time() + 60*60*24);
+session_start();
+if (empty($_SESSION['id_visitatore'])) {
+    $_SESSION['id_visitatore'] = rand(100, 999);
 }
 
-$page = filter_input(INPUT_GET, 'page');
-switch ($page) {
-    case 'students':
-        include __DIR__ . '/students.php';
-        break;
-
-    case 'home':
-    default:
-        include __DIR__ . '/home.php';
-}
+// Includo il layout richiesto
+$layoutFile = getLayoutFile();
+include $layoutFile;

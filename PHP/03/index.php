@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 03. Concatenazione di stringhe
- * @version 2015-10-09
+ * @version 2015-11-09
  */
 
 // Definisco una variabile stringa
@@ -12,7 +12,7 @@ $message = "Benvenuti al corso!";
 // Definisco una nuova variabile
 $title = "Questo è il corso PHP di CodeMaster";
 
-// Stampo i vari pezzi uno per uno
+// MODO 1: stampo i vari pezzi uno per uno
 echo $message;
 echo "<br>";
 echo $title;
@@ -20,12 +20,12 @@ echo $title;
 // Separatore
 echo "<hr>";
 
-// Stessa cosa ma uso la concatenazione
+// MODO 2: stessa cosa ma uso la concatenazione
 echo $message . "<br>" . $title;
 
 // Separatore
 echo "<hr>";
 
-// Creo una nuova variabile che contiene la stringa completa
+// MODO 3: creo una nuova variabile che contiene la stringa completa
 $fullString = $message . "<br>" . $title;
 echo $fullString;

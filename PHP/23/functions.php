@@ -22,36 +22,34 @@ function getCoffeeCost($numberOfStudents, $singleCoffeeCost = 1)
  */
 function getStudents()
 {
-    $fileHandle = fopen(__DIR__ . '/students.csv', 'r');
-    if (empty($fileHandle)) {
-        return array();
-    }
-
-    $students = array();
-    while ($data = fgetcsv($fileHandle)) {
-        if ($data === false) {
-            break;
-        }
-        $name = $data[0];
-        $role = $data[1];
-        $students[$name] = $role;
-    }
-    fclose($fileHandle);
+    $students = array(
+        'Francesco' => 'Programmatore',
+        'Matteo' => 'Programmatore',
+        'Marco' => 'Devops',
+        'Patrizia' => 'Grafica'
+    );
 
     return $students;
 }
 
+
 /**
- * Imposta i cookies necessari
+ * Restituisce il percorso completo del file da includere in base alla pagina
+ * richiesta. Se tale file non esiste, restituisce il file di default (home).
  *
- * @return void
+ * @return string
  */
-function setCookies()
+function getLayoutFile()
 {
-    if (empty(filter_input(INPUT_COOKIE, 'id_visita'))) {
-        setcookie('id_visita', rand(100, 999));
-    }
-    if (empty(filter_input(INPUT_COOKIE, 'id_visitatore'))) {
-        setcookie('id_visitatore', rand(100, 999), time() + 60 * 60 * 24);
+    // Usare "filter_input" è più sicuro che accedere direttamente alla
+    // variabile globale
+    $requestedPage = filter_input(INPUT_GET, 'page');
+
+    $layoutFile = "$requestedPage.php";
+
+    if (file_exists($layoutFile)) {
+        return $layoutFile;
+    } else {
+        return "home.php";
     }
 }

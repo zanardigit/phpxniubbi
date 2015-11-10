@@ -3,9 +3,20 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 14. Funzione personalizzata
- * @version 2015-10-09
+ * @version 2015-11-09
  */
 
+// Definizione di una funzione personalizzata
+function getCoffeeCost()
+{
+    $singleCoffeeCost = 1;
+    $numberOfStudents = 4;
+    $totalCost = $singleCoffeeCost * $numberOfStudents;
+
+    return $totalCost;
+}
+
+// Blocco principale del programma
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
 $students = array(
@@ -16,23 +27,14 @@ $students = array(
 );
 $numberOfStudents = count($students);
 
-// Richiamo una funzione personalizzata
+// Richiamo la funzione personalizzata
 $coffeeCost = getCoffeeCost();
-
-// funzione personalizzata
-function getCoffeeCost()
-{
-    $singleCoffeeCost = 1;
-    $numberOfStudents = 4;
-    $totalCost = $singleCoffeeCost * $numberOfStudents;
-
-    return $totalCost;
-}
 
 ?>
 <html>
     <head>
-        <title><?= TITLE ?></title>
+        <meta charset="utf-8">
+        <title><?= $title ?></title>
     </head>
     <body>
         <h1><?= $message ?></h1>

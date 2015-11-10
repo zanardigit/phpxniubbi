@@ -2,8 +2,8 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 08. completamento dell'HTML
- * @version 2015-10-13
+ * 08. generazione dell'HTML
+ * @version 2015-11-09
  */
 
 // Definisco le variabili di tipo stringa
@@ -12,12 +12,12 @@ $message = "Benvenuti al corso!";
 
 echo "<html>"
     . "<head>"
+    . "<meta charset='utf-8'>"
     . "<title>$title</title>"
     . "</head>"
     . "<body>";
 
 // Stampo a video la stringa di benvenuto
-
 echo "<h1>" . $message . "</h1>";
 
 // Definisco una variabile numerica

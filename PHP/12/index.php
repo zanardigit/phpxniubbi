@@ -3,26 +3,26 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 12. Ciclo foreach e incremento di variabili numeriche
- * @version 2015-10-13
+ * @version 2015-11-09
  */
 
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
 $students = array('Francesco', 'Matteo', 'Marco', 'Patrizia');
 
-// Versione estesa
+// Modo 1: versione estesa
 $numberOfStudents = 0;
 foreach ($students as $student) {
     $numberOfStudents = $numberOfStudents + 1;
 }
 
-// Stessa cosa utilizzando la notazione abbreviata
+// Modo 2: stessa cosa utilizzando la notazione abbreviata
 $numberOfStudents = 0;
 foreach ($students as $student) {
     $numberOfStudents += 1;
 }
 
-// Stessa cosa utilizzando l'operatore di incremento singolo
+// Modo 3: stessa cosa utilizzando l'operatore di incremento singolo
 $numberOfStudents = 0;
 foreach ($students as $student) {
     $numberOfStudents ++;
@@ -32,6 +32,7 @@ foreach ($students as $student) {
 
 <html>
     <head>
+        <meta charset="utf-8">
         <title><?= $title ?></title>
     </head>
     <body>

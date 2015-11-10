@@ -1,6 +1,21 @@
 <?php
 
 /**
+ * Calcola il costo totale del caffè in base al numero di studenti e al costo
+ * del singolo caffè
+ *
+ * @param   int $numberOfStudents
+ * @param   int $singleCoffeeCost default 1 se non specificato
+ * @return  int
+ */
+function getCoffeeCost($numberOfStudents, $singleCoffeeCost = 1)
+{
+    $totalCost = $singleCoffeeCost * $numberOfStudents;
+
+    return $totalCost;
+}
+
+/**
  * Ottiene l'elenco degli studenti
  *
  * @return array
@@ -17,14 +32,34 @@ function getStudents()
         if ($data === false) {
             break;
         }
-        $student = new Student();
-        $student->name = $data[0];
-        $student->role = $data[1];
-        $students[] = $student;
+        $name = $data[0];
+        $role = $data[1];
+        $students[$name] = $role;
     }
     fclose($fileHandle);
 
     return $students;
+}
+
+/**
+ * Restituisce il percorso completo del file da includere in base alla pagina
+ * richiesta. Se tale file non esiste, restituisce il file di default (home).
+ *
+ * @return string
+ */
+function getLayoutFile()
+{
+    // Usare "filter_input" è più sicuro che accedere direttamente alla
+    // variabile globale
+    $requestedPage = filter_input(INPUT_GET, 'page');
+
+    $layoutFile = "$requestedPage.php";
+
+    if (file_exists($layoutFile)) {
+        return $layoutFile;
+    } else {
+        return "home.php";
+    }
 }
 
 /**

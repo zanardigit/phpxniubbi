@@ -2,33 +2,18 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 20. Filter input e variabili di ambiente
- * @version 2015-10-13
+ * 20. Funzione esterna per decidere quale file includere
+ * @version 2015-11-09
  */
 
 require_once __DIR__ . '/functions.php';
 
-// Recupero automaticamente l'indirizzo del sito
-$url = filter_input(INPUT_SERVER, 'http_host');
-if ($url == "http://codemaster.local") {
-    $title = "Corso Codemaster";
-}
-else {
-    $title = "Ignoto";
-}
-
+$title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
 $students = getStudents();
 $numberOfStudents = count($students);
 $coffeeCost = getCoffeeCost($numberOfStudents);
 
-$page = filter_input(INPUT_GET, 'page');
-switch ($page) {
-    case 'students':
-        include __DIR__ . '/students.php';
-        break;
-
-    case 'home':
-    default:
-        include __DIR__ . '/home.php';
-}
+// Includo il layout richiesto
+$layoutFile = getLayoutFile();
+include $layoutFile;

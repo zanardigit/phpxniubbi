@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 19. Switch e variabili globali
- * @version 2015-10-13
+ * @version 2015-11-09
  */
 
 require_once __DIR__ . '/functions.php';
@@ -14,6 +14,12 @@ $students = getStudents();
 $numberOfStudents = count($students);
 $coffeeCost = getCoffeeCost($numberOfStudents);
 
-// Includo il layout richiesto
-$requestedFile = getFileName();
-include $requestedFile;
+switch ($_GET['page']) {
+    case 'students':
+        include __DIR__ . '/students.php';
+        break;
+
+    case 'home':
+    default:
+        include __DIR__ . '/home.php';
+}

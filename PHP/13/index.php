@@ -3,17 +3,11 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 13. Array associativo
- * @version 2015-10-09
+ * @version 2015-11-09
  */
 
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
-//$students = array(
-//    0 => 'Francesco',
-//    1 => 'Matteo',
-//    2 => 'Marco',
-//    3 => 'Patrizia'
-//);
 $students = array(
     'Francesco' => 'Programmatore',
     'Matteo' => 'Programmatore',
@@ -22,13 +16,15 @@ $students = array(
 );
 $numberOfStudents = count($students);
 
-echo $students['Francesco']; // 'Programmatore'
-echo $students['Marco']; // 'Devops'
+// Per accedere a uno specifico elemento si può usare la chiave, es.
+// echo $students['Francesco']; // Stampa 'Programmatore'
+// echo $students['Marco']; // Stampa 'Devops'
 
 ?>
 
 <html>
     <head>
+        <meta charset="utf-8">
         <title><?= $title ?></title>
     </head>
     <body>

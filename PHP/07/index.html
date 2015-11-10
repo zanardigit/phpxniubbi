@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta charset="utf-8">
         <title>La mia prima pagina web</title>
     </head>
     <body>

@@ -57,34 +57,22 @@ function setCookies()
 }
 
 /**
- * Verifica ed eventualmente aggiunge un nuovo studente
+ * Restituisce il percorso completo del file da includere in base alla pagina
+ * richiesta. Se tale file non esiste, restituisce il file di default (home).
+ *
+ * @return string
  */
-function addStudent()
+function getLayoutFile()
 {
-    $addstudent = filter_input(INPUT_POST, 'addstudent');
-    if ($addstudent != 1) {
-        return false;
+    // Usare "filter_input" è più sicuro che accedere direttamente alla
+    // variabile globale
+    $requestedPage = filter_input(INPUT_GET, 'page');
+
+    $layoutFile = "$requestedPage.php";
+
+    if (file_exists($layoutFile)) {
+        return $layoutFile;
+    } else {
+        return "home.php";
     }
-
-    $fileHandle = fopen(__DIR__ . '/students.csv', 'a');
-    if (empty($fileHandle)) {
-        return false;
-    }
-
-    $fields = array(
-        filter_input(INPUT_POST, 'name'),
-        filter_input(INPUT_POST, 'role'),
-    );
-
-    $result = fputcsv($fileHandle, $fields);
-
-    if ($result === false) {
-        return false;
-    }
-    else {
-        return true;
-    }
-
-    // O più semplicemente
-    return boolvar($result);
 }
