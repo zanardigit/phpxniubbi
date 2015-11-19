@@ -13,8 +13,9 @@ $message = "Benvenuti al corso PHP di CodeMaster!";
 $students = getStudents();
 $numberOfStudents = count($students);
 $coffeeCost = getCoffeeCost($numberOfStudents);
+$page = isset($_GET['page']) ? $_GET['page'] : null;
 
-switch ($_GET['page']) {
+switch ($page) {
     case 'students':
         include __DIR__ . '/students.php';
         break;
