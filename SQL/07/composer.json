@@ -1,0 +1,23 @@
+{
+    "name": "zanardigit/sqlxniubbi",
+    "type": "application",
+    "description": "A set of examples about db interactions",
+    "keywords": [
+        "sql",
+        "php",
+        "database"
+    ],
+    "homepage": "https://github.com/zanardigit/phpxniubbi/SQL",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Francesco Abeni",
+            "email": "f.abeni@gibilogic.com",
+            "homepage": "http://www.yegods.it"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+         "doctrine/dbal": "~2.2"
+    }
+}
