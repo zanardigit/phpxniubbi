@@ -8,10 +8,7 @@ header('Content-Type: text/html; charset=utf-8');
  */
 
 // Carica le classi di base
-use Doctrine\Common\ClassLoader;
-require __DIR__ . '/../vendor/doctrine/lib/Doctrine/Common/ClassLoader.php';
-$classLoader = new ClassLoader('Doctrine', __DIR__ . '/../vendor/doctrine');
-$classLoader->register();
+require __DIR__ . '/vendor/autoload.php';
 
 // Configurazione
 $dbType = 'pdo_mysql';
@@ -23,11 +20,11 @@ $dbName = 'codemaster';
 // Connessione tramite array di parametri
 $config = new \Doctrine\DBAL\Configuration();
 $connectionParams = array(
-    'host' => 'localhost',
-    'user' => 'codemaster',
-    'password' => 'tag',
-    'dbname' => 'codemaster',
-    'driver' => 'pdo_mysql',
+    'host' => $dbHost,
+    'user' => $dbUser,
+    'password' => $dbPass,
+    'dbname' => $dbName,
+    'driver' => $dbType,
 );
 $connection = \Doctrine\DBAL\DriverManager::getConnection($connectionParams, $config);
 if ($connection == false) {

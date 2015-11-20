@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 07. doctrine DBAL (Configurazione via URL)
+ * 08. doctrine DBAL (select via SQL)
  * @version 2015-11-19
  */
 
@@ -24,4 +24,11 @@ $connectionParams = array(
 $connection = \Doctrine\DBAL\DriverManager::getConnection($connectionParams, $config);
 if ($connection == false) {
     exit("Impossibile connettersi al database");
+}
+
+// Select
+$sql = "SELECT * FROM studenti";
+$result = $connection->query($sql);
+while ($student = $result->fetchObject()) {
+    echo $student->firstName . "<br>";
 }
