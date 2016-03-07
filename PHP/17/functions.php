@@ -22,12 +22,12 @@ function getCoffeeCost($numberOfStudents, $singleCoffeeCost = 1)
  */
 function getStudents()
 {
-    $students = array(
+    $students = [
         'Francesco' => 'Programmatore',
         'Matteo' => 'Programmatore',
         'Marco' => 'Devops',
         'Patrizia' => 'Grafica'
-    );
+    ];
 
     return $students;
 }

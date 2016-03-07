@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 24. Leggi da CSV
- * @version 2015-11-09
+ * @version 2016-03-07
  */
 
 require_once __DIR__ . '/functions.php';

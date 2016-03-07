@@ -17,10 +17,10 @@ $page = isset($_GET['page']) ? $_GET['page'] : null;
 
 switch ($page) {
     case 'students':
-        include __DIR__ . '/students.php';
+        include __DIR__ . '/layouts/students.php';
         break;
 
     case 'home':
     default:
-        include __DIR__ . '/home.php';
+        include __DIR__ . '/layouts/home.php';
 }

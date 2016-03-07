@@ -102,11 +102,11 @@ function getLayoutFile()
     // variabile globale
     $requestedPage = filter_input(INPUT_GET, 'page');
 
-    $layoutFile = "$requestedPage.php";
+    $layoutFile = __DIR__ . "/layouts/$requestedPage.php";
 
     if (file_exists($layoutFile)) {
         return $layoutFile;
     } else {
-        return "home.php";
+        return __DIR__ . "/layouts/home.php";
     }
 }

@@ -42,27 +42,6 @@ function getStudents()
 }
 
 /**
- * Restituisce il percorso completo del file da includere in base alla pagina
- * richiesta. Se tale file non esiste, restituisce il file di default (home).
- *
- * @return string
- */
-function getLayoutFile()
-{
-    // Usare "filter_input" è più sicuro che accedere direttamente alla
-    // variabile globale
-    $requestedPage = filter_input(INPUT_GET, 'page');
-
-    $layoutFile = "$requestedPage.php";
-
-    if (file_exists($layoutFile)) {
-        return $layoutFile;
-    } else {
-        return "home.php";
-    }
-}
-
-/**
  * Imposta i cookies necessari
  *
  * @return void
@@ -108,4 +87,25 @@ function addStudent()
 
     // O più semplicemente
     return boolvar($result);
+}
+
+/**
+ * Restituisce il percorso completo del file da includere in base alla pagina
+ * richiesta. Se tale file non esiste, restituisce il file di default (home).
+ *
+ * @return string
+ */
+function getLayoutFile()
+{
+    // Usare "filter_input" è più sicuro che accedere direttamente alla
+    // variabile globale
+    $requestedPage = filter_input(INPUT_GET, 'page');
+
+    $layoutFile = __DIR__ . "/layouts/$requestedPage.php";
+
+    if (file_exists($layoutFile)) {
+        return $layoutFile;
+    } else {
+        return __DIR__ . "/layouts/home.php";
+    }
 }

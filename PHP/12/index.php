@@ -3,12 +3,11 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 12. Ciclo foreach e incremento di variabili numeriche
- * @version 2015-11-09
+ * @version 2016-03-07
  */
-
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
-$students = array('Francesco', 'Matteo', 'Marco', 'Patrizia');
+$students = ['Francesco', 'Matteo', 'Marco', 'Patrizia'];
 
 // Modo 1: versione estesa
 $numberOfStudents = 0;
@@ -42,13 +41,12 @@ foreach ($students as $student) {
         <ul>
             <?php foreach ($students as $student): ?>
                 <li>
-                    <img src="/images/<?= $student ?>.png">
                     <div class="studente">
                         <?= $student ?>
                     </div>
-                    <hr>
                 </li>
             <?php endforeach ?>
         </ul>
+        <hr>
     </body>
 </html>

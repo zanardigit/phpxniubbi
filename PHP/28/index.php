@@ -2,14 +2,14 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 26. Uso delle classi
- * @version 2015-11-10
+ * 28. Uso delle classi e filter_input
+ * @version 2016-03-07
  */
 
 require_once __DIR__ . '/functions.php';
-require_once __DIR__ . '/Coffee.php';
-require_once __DIR__ . '/Course.php';
-require_once __DIR__ . '/Student.php';
+require_once __DIR__ . '/classes/Coffee.php';
+require_once __DIR__ . '/classes/Course.php';
+require_once __DIR__ . '/classes/Student.php';
 
 $course = new Course();
 

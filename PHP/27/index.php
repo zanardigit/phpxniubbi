@@ -3,12 +3,12 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 27. Uso delle classi
- * @version 2015-11-10
+ * @version 2016-03-07
  */
 
 require_once __DIR__ . '/functions.php';
-require_once __DIR__ . '/Course.php';
-require_once __DIR__ . '/Student.php';
+require_once __DIR__ . '/classes/Course.php';
+require_once __DIR__ . '/classes/Student.php';
 
 $course = new Course;
 $course->title = "Corso Codemaster";

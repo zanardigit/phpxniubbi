@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 14. Funzione personalizzata
- * @version 2015-11-09
+ * @version 2016-03-07
  */
 
 // Definizione di una funzione personalizzata
@@ -19,13 +19,12 @@ function getCoffeeCost()
 // Blocco principale del programma
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
-$students = array(
+$students = [
     'Francesco' => 'Programmatore',
     'Matteo' => 'Programmatore',
     'Marco' => 'Devops',
     'Patrizia' => 'Grafica'
-);
-$numberOfStudents = count($students);
+];
 
 // Richiamo la funzione personalizzata
 $coffeeCost = getCoffeeCost();
@@ -38,7 +37,6 @@ $coffeeCost = getCoffeeCost();
     </head>
     <body>
         <h1><?= $message ?></h1>
-        <p>Il numero degli studenti è <?= $numberOfStudents ?></p>
         <h2>Elenco degli studenti</h2>
         <ul>
             <?php foreach ($students as $name => $role): ?>

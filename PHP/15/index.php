@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 15. Funzione personalizzata con parametri
- * @version 2015-11-09
+ * @version 2016-03-07
  */
 
 /**
@@ -24,12 +24,12 @@ function getCoffeeCost($numberOfStudents, $singleCoffeeCost = 1)
 // Blocco principale del programma
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
-$students = array(
+$students = [
     'Francesco' => 'Programmatore',
     'Matteo' => 'Programmatore',
     'Marco' => 'Devops',
     'Patrizia' => 'Grafica'
-);
+];
 $numberOfStudents = count($students);
 
 // Richiamo la funzione personalizzata passando un parametro
