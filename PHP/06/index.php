@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 06. Altre funzioni per gli array
- * @version 2015-10-10
+ * @version 2016-03-07
  */
 
 // Definisco le variabili di tipo stringa
@@ -20,7 +20,7 @@ $numberOfStudents = 4;
 echo "Numero di studenti: " . $numberOfStudents;
 
 // Definisco un array
-$students = array('Francesco', 'Matteo', 'Marco', 'Patrizia');
+$students = ['Francesco', 'Matteo', 'Marco', 'Patrizia'];
 
 // Stampo l'array intero in un colpo solo con il comando print_r
 echo "<h1>Elenco degli studenti</h1>";

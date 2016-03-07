@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 05. Array
- * @version 2015-11-09
+ * @version 2016-03-07
  */
 
 // Definisco le variabili di tipo stringa
@@ -33,13 +33,17 @@ $students = array("Francesco", "Matteo", "Marco", "Patrizia");
 // MODO 3: definisco un array (nuovo modo da PHP 5.4)
 $students = ["Francesco", "Matteo", "Marco", "Patrizia"];
 
-// MODO 4: definisco un array (parto da un array vuoto e lo riempio)
+// MODO 4: definisco un array vuoto e lo riempio
 $students = array();
-$students []= "Francesco"; // Operatore di aggiunta elementi
-$students []= "Matteo";
-$students []= "Marco";
-$students []= "Patrizia";
-$students []= "Enrico";
+$students = []; // equivalente
+
+$students[] = "Francesco"; // Operatore di aggiunta elementi
+$students[] = "Matteo";
+$students[] = "Marco";
+$students[] = "Patrizia";
+$students[] = "Enrico";
+$students[] = "Paolo";
+$students[] = "Lorenzo";
 
 // Stampo l"array intero in un colpo solo con il comando print_r
 echo "<h1>Elenco degli studenti</h1>";

@@ -3,14 +3,13 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 09. Separazione dell'HTML
- * @version 2015-11-09
+ * @version 2016-03-07
  */
 
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
 $numberOfStudents = 4;
 $students = array('Francesco', 'Matteo', 'Marco', 'Patrizia');
-
 $date = date("d M Y", time());
 ?>
 <html>
@@ -20,7 +19,7 @@ $date = date("d M Y", time());
     </head>
     <body>
         <h1><?php echo $message ?></h1>
-        <p>Oggi è il <?php echo $date ?></p>
+        <p>Oggi è il <strong><?php echo $date ?></strong></p>
         <p>Il numero degli studenti è <?php echo $numberOfStudents ?></p>
         <h2>Elenco degli studenti</h2>
         <ul>
