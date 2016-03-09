@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 20. Funzione esterna per decidere quale file includere
- * @version 2016-03-08
+ * @version 2016-03-09
  */
 
 require_once __DIR__ . '/functions.php';
@@ -15,5 +15,5 @@ $numberOfStudents = count($students);
 $coffeeCost = getCoffeeCost($numberOfStudents);
 
 // Includo il layout richiesto
-$layoutFile = getLayoutFile();
+$layoutFile = getLayoutFilePath();
 include $layoutFile;

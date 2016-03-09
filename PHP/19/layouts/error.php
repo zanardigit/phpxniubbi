@@ -8,8 +8,7 @@
             <a href="index.php?page=home">Home</a>
             <a href="index.php?page=students">Students</a>
         </nav>
-        <h1><?= $message ?></h1>
-        <p>Il numero degli studenti è <?= $numberOfStudents ?></p>
-        <p>Il costo totale del caffè è <?= $coffeeCost ?></p>
+        <h1>Errore!</h1>
+        <p>Non è stata selezionata alcuna pagina</p>
     </body>
 </html>

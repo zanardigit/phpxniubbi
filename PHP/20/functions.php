@@ -34,13 +34,14 @@ function getStudents()
 
 /**
  * Restituisce il percorso completo del file da includere in base alla pagina
- * richiesta. Se tale file non esiste, restituisce il file di default (home).
+ * richiesta. Se non è stata richiesta alcuna pagina, o se il relativo file non
+ * esiste, restituisce il file di default (home).
  *
  * @return string
  */
-function getLayoutFile()
+function getLayoutFilePath()
 {
-    if (!isset($_GET['page'])) {
+    if ( ! isset($_GET['page'])) {
         return __DIR__ . "/layouts/home.php";
     }
 

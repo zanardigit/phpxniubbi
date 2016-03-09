@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 19. Variabili globali e scelta del layout
- * @version 2016-03-08
+ * @version 2016-03-09
  */
 
 require_once __DIR__ . '/functions.php';
