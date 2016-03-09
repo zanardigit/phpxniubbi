@@ -3,13 +3,13 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 09. Separazione dell'HTML
- * @version 2016-03-07
+ * @version 2016-03-08
  */
 
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
 $numberOfStudents = 4;
-$students = array('Francesco', 'Matteo', 'Marco', 'Patrizia');
+$students = ["Francesco", "Matteo", "Marco", "Patrizia"];
 $date = date("d M Y", time());
 ?>
 <html>

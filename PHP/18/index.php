@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 18. Inclusione di file esterno (layout)
- * @version 2016-03-07
+ * @version 2016-03-08
  */
 
 require_once __DIR__ . '/functions.php';

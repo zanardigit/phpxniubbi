@@ -7,8 +7,13 @@
         <h1><?= $message ?></h1>
         <h2>Elenco degli studenti</h2>
         <ul>
-            <?php foreach ($students as $name => $role): ?>
-                <li><strong><?= $name ?></strong> (<?= $role ?>)</li>
+            <?php foreach ($students as $studentCode => $studentName): ?>
+                <li>
+                    <strong style="color: red">
+                        <?= $studentCode ?>
+                    </strong>
+                    <?= $studentName ?>
+                </li>
             <?php endforeach ?>
         </ul>
         <h2>Aggiungi studente</h2>
@@ -18,9 +23,9 @@
                 <br>
                 <input id="name" name="name" type="text">
                 <br>
-                <label for="role">Ruolo:</label>
+                <label for="code">Codice:</label>
                 <br>
-                <input id="role" name="role" type="text">
+                <input id="code" name="code" type="text">
                 <br>
                 <input id="addstudent" name="addstudent" type="hidden" value="1">
                 <br>

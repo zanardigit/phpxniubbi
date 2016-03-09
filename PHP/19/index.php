@@ -2,8 +2,8 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 19. Switch e variabili globali
- * @version 2015-11-09
+ * 19. Variabili globali e scelta del layout
+ * @version 2016-03-08
  */
 
 require_once __DIR__ . '/functions.php';
@@ -13,14 +13,11 @@ $message = "Benvenuti al corso PHP di CodeMaster!";
 $students = getStudents();
 $numberOfStudents = count($students);
 $coffeeCost = getCoffeeCost($numberOfStudents);
-$page = isset($_GET['page']) ? $_GET['page'] : null;
 
-switch ($page) {
-    case 'students':
-        include __DIR__ . '/layouts/students.php';
-        break;
+if ($_GET["page"] == "home") {
+    include __DIR__ . "/layouts/home.php";
+}
 
-    case 'home':
-    default:
-        include __DIR__ . '/layouts/home.php';
+if ($_GET["page"] == "students") {
+    include __DIR__ . "/layouts/students.php";
 }

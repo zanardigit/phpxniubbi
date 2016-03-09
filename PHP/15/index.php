@@ -3,20 +3,12 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 15. Funzione personalizzata con parametri
- * @version 2016-03-07
+ * @version 2016-03-08
  */
 
-/**
- * Calcola il costo totale del caffè in base al numero di studenti e al costo
- * del singolo caffè
- *
- * @param   int $numberOfStudents
- * @param   int $singleCoffeeCost default 1 se non passato come parametro
- * @return  int
- */
-function getCoffeeCost($numberOfStudents, $singleCoffeeCost = 1)
+function getCoffeeCost($numberOfPeople, $singleCost)
 {
-    $totalCost = $singleCoffeeCost * $numberOfStudents;
+    $totalCost = $numberOfPeople * $singleCost;
 
     return $totalCost;
 }
@@ -25,15 +17,16 @@ function getCoffeeCost($numberOfStudents, $singleCoffeeCost = 1)
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
 $students = [
-    'Francesco' => 'Programmatore',
-    'Matteo' => 'Programmatore',
-    'Marco' => 'Devops',
-    'Patrizia' => 'Grafica'
+    "P001" => "Francesco",
+    "P002" => "Matteo",
+    "D001" => "Marco",
+    "G001" => "Patrizia",
 ];
 $numberOfStudents = count($students);
+$singleCoffeeCost = 1;
 
 // Richiamo la funzione personalizzata passando un parametro
-$coffeeCost = getCoffeeCost($numberOfStudents);
+$coffeeCost = getCoffeeCost($numberOfStudents, $singleCoffeeCost);
 
 ?>
 <html>
@@ -46,8 +39,13 @@ $coffeeCost = getCoffeeCost($numberOfStudents);
         <p>Il numero degli studenti è <?= $numberOfStudents ?></p>
         <h2>Elenco degli studenti</h2>
         <ul>
-            <?php foreach ($students as $name => $role): ?>
-                <li><strong><?= $name ?></strong> (<?= $role ?>)</li>
+            <?php foreach ($students as $studentCode => $studentName): ?>
+                <li>
+                    <strong style="color: red">
+                        <?= $studentCode ?>
+                    </strong>
+                    <?= $studentName ?>
+                </li>
             <?php endforeach ?>
         </ul>
         <p>Il costo totale del caffè è <?= $coffeeCost ?></p>

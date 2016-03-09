@@ -2,33 +2,19 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 12. Ciclo foreach e incremento di variabili numeriche
- * @version 2016-03-07
+ * 12. Array con chiavi numeriche esplicitate
+ * @version 2016-03-08
  */
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
-$students = ['Francesco', 'Matteo', 'Marco', 'Patrizia'];
-
-// Modo 1: versione estesa
-$numberOfStudents = 0;
-foreach ($students as $student) {
-    $numberOfStudents = $numberOfStudents + 1;
-}
-
-// Modo 2: stessa cosa utilizzando la notazione abbreviata
-$numberOfStudents = 0;
-foreach ($students as $student) {
-    $numberOfStudents += 1;
-}
-
-// Modo 3: stessa cosa utilizzando l'operatore di incremento singolo
-$numberOfStudents = 0;
-foreach ($students as $student) {
-    $numberOfStudents ++;
-}
-
+$students = [
+    0 => "Francesco",
+    1 => "Matteo",
+    2 => "Marco",
+    3 => "Patrizia"
+];
+$numberOfStudents = count($students);
 ?>
-
 <html>
     <head>
         <meta charset="utf-8">

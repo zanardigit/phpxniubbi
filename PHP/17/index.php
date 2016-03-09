@@ -9,7 +9,7 @@ header('Content-Type: text/html; charset=utf-8');
 // Inclusione di un file
 require_once 'functions.php';
 
-// Meglio ancora, specificando una costante di sistema che rappresenta la cartella corrente
+// Meglio ancora, specificando una costante di sistema che rappresenta la cartella in cui mi trovo
 require_once __DIR__ . '/functions.php';
 
 // Tutti i modi possibili di includere un file:
@@ -36,8 +36,13 @@ $coffeeCost = getCoffeeCost($numberOfStudents);
         <p>Il numero degli studenti è <?= $numberOfStudents ?></p>
         <h2>Elenco degli studenti</h2>
         <ul>
-            <?php foreach ($students as $name => $role): ?>
-                <li><strong><?= $name ?></strong> (<?= $role ?>)</li>
+            <?php foreach ($students as $studentCode => $studentName): ?>
+                <li>
+                    <strong style="color: red">
+                        <?= $studentCode ?>
+                    </strong>
+                    <?= $studentName ?>
+                </li>
             <?php endforeach ?>
         </ul>
         <p>Il costo totale del caffè è <?= $coffeeCost ?></p>

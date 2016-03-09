@@ -2,26 +2,25 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 13. Array associativo
- * @version 2016-03-07
+ * 13. Array con chiavi di tipo stringa
+ * @version 2016-03-08
  */
 
 $title = "Corso Codemaster";
 $message = "Benvenuti al corso PHP di CodeMaster!";
 $students = [
-    'Francesco' => 'Programmatore',
-    'Matteo' => 'Programmatore',
-    'Marco' => 'Devops',
-    'Patrizia' => 'Grafica'
+    "P001" => "Francesco",
+    "P002" => "Matteo",
+    "D001" => "Marco",
+    "G001" => "Patrizia",
 ];
 $numberOfStudents = count($students);
 
 // Per accedere a uno specifico elemento si può usare la chiave, es.
-// echo $students['Francesco']; // Stampa 'Programmatore'
-// echo $students['Marco']; // Stampa 'Devops'
+// echo $students['P001']; // Stampa "Francesco"
+// echo $students['G001']; // Stampa "Patrizia"
 
 ?>
-
 <html>
     <head>
         <meta charset="utf-8">
@@ -32,8 +31,13 @@ $numberOfStudents = count($students);
         <p>Il numero degli studenti è <?= $numberOfStudents ?></p>
         <h2>Elenco degli studenti</h2>
         <ul>
-            <?php foreach ($students as $name => $role): ?>
-                <li><strong><?= $name ?></strong> (<?= $role ?>)</li>
+            <?php foreach ($students as $studentCode => $studentName): ?>
+                <li>
+                    <strong style="color: red">
+                        <?= $studentCode ?>
+                    </strong>
+                    <?= $studentName ?>
+                </li>
             <?php endforeach ?>
         </ul>
     </body>

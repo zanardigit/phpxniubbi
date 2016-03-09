@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 05. Array
- * @version 2016-03-07
+ * @version 2016-03-08
  */
 
 // Definisco le variabili di tipo stringa
@@ -41,9 +41,6 @@ $students[] = "Francesco"; // Operatore di aggiunta elementi
 $students[] = "Matteo";
 $students[] = "Marco";
 $students[] = "Patrizia";
-$students[] = "Enrico";
-$students[] = "Paolo";
-$students[] = "Lorenzo";
 
 // Stampo l"array intero in un colpo solo con il comando print_r
 echo "<h1>Elenco degli studenti</h1>";

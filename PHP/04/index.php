@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 04. Tipi di variabili
- * @version 2015-10-09
+ * @version 2016-03-08
  */
 
 // Definisco le variabili di tipo stringa
@@ -18,6 +18,14 @@ $numberOfStudents = 4;
 
 // Stampo a video una stringa informativa (notare la conversione automatica della variabile)
 echo "Numero di studenti: " . $numberOfStudents;
+
+// Incremento una variabile numerica
+// Modo 1: versione estesa
+$numberOfStudents = $numberOfStudents + 1;
+// Modo 2: stessa cosa utilizzando la notazione abbreviata
+$numberOfStudents += 1;
+// Modo 3: stessa cosa utilizzando l'operatore di incremento singolo
+$numberOfStudents ++;
 
 // Definisco una variabile booleana
 $isCodeMaster = true;

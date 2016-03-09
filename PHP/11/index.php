@@ -2,8 +2,8 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 11. Blocco if e conteggio di un array
- * @version 2016-03-07
+ * 11. Blocco if, conteggio di un array, foreach
+ * @version 2016-03-08
  */
 
 // Assegnazione
@@ -17,11 +17,8 @@ else {
     $greeting = "Buon giorno!";
 }
 
-// Stessa cosa con un operatore ternario
-$greeting = $timeOfTheDay >= 16 ? "Buona sera" : "Buon giorno";
-
 $message = "Benvenuti al corso PHP di CodeMaster!";
-$students = ['Francesco', 'Matteo', 'Marco', 'Patrizia', 'Enrico', 'Ruben'];
+$students = ['Francesco', 'Matteo', 'Marco', 'Patrizia', 'Enrico'];
 
 // Conteggio di un array
 $numberOfStudents = count($students);
