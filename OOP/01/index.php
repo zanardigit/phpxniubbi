@@ -3,9 +3,12 @@
 
 /**
  * 01. Esempi di classi con inheritance
- * @version 2015-11-19
+ * @version 2016-03-10
  */
 
+/**
+ * Person
+ */
 class Person {
     public $firstName;
     public $lastName;
@@ -13,6 +16,9 @@ class Person {
     public $email;
 }
 
+/**
+ * WeSchoolUser
+ */
 class WeSchoolUser extends Person {
     public $accountName;
 
@@ -21,6 +27,9 @@ class WeSchoolUser extends Person {
     }
 }
 
+/**
+ * Teacher
+ */
 class Teacher extends WeSchoolUser {
     public $topic;
 
@@ -29,6 +38,9 @@ class Teacher extends WeSchoolUser {
     }
 }
 
+/**
+ * Student
+ */
 class Student extends WeSchoolUser {
     public $schoolId;
 }
