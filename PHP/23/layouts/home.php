@@ -5,7 +5,17 @@
     </head>
     <body>
         <h1><?= $message ?></h1>
-        <p>Il numero degli studenti è <?= $numberOfStudents ?></p>
-        <p>Il costo totale del caffè è <?= $coffeeCost ?></p>
+        <h2>Scegli la pagina desiderata</h2>
+        <form action="index.php" method="get">
+            <p>
+                <select name="page">
+                    <option value="home">home</option>
+                    <option value="students">students</option>
+                    <option value="summary">summary</option>
+                    <option value="results">results</option>
+                </select>
+            </p>
+            <input type="submit" value="Invia">
+        </form>
     </body>
 </html>

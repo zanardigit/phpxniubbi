@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 24. Leggi da CSV
- * @version 2016-03-07
+ * @version 2016-03-10
  */
 
 require_once __DIR__ . '/functions.php';
@@ -22,5 +22,5 @@ $coffeeCost = getCoffeeCost($numberOfStudents);
 setCookies();
 
 // Includo il layout richiesto
-$layoutFile = getLayoutFile();
+$layoutFile = getLayoutFilePath();
 include $layoutFile;

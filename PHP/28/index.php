@@ -2,36 +2,25 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 28. Uso delle classi e filter_input
- * @version 2016-03-07
+ * 27. Uso di classi
+ * @version 2016-03-10
  */
 
+define("LAYOUTS_DIR", __DIR__ . "/layouts");
+define("DEFAULT_LAYOUT", LAYOUTS_DIR . "/home.php");
+
 require_once __DIR__ . '/functions.php';
-require_once __DIR__ . '/classes/Coffee.php';
 require_once __DIR__ . '/classes/Course.php';
 require_once __DIR__ . '/classes/Student.php';
 
-$course = new Course();
-
-$url = filter_input(INPUT_SERVER, 'http_host');
-if ($url == "http://codemaster.local") {
-    $course->title = "Corso Codemaster";
-}
-else {
-    $course->title = "Ignoto";
-}
-
+$course = new Course;
+$course->title = "Corso Codemaster";
 $course->message = "Benvenuti al corso PHP di CodeMaster!";
-$result = addStudent();
-if ($result == true) {
-    $course->message = "Nuovo studente aggiunto";
-}
-
 $course->students = getStudents();
-$coffee = new Coffee();
-$coffeeCost = $coffee->getCost($course->getNumberOfStudents());
-setCookies();
+$course->numberOfStudents = count($course->students);
+
+$coffeeCost = getCoffeeCost($course->numberOfStudents);
 
 // Includo il layout richiesto
-$layoutFile = getLayoutFile();
+$layoutFile = getLayoutFilePath();
 include $layoutFile;

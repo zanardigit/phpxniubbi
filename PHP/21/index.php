@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 21. Filter input
- * @version 2016-03-07
+ * @version 2016-03-10
  */
 
 require_once __DIR__ . '/functions.php';
@@ -27,5 +27,5 @@ $numberOfStudents = count($students);
 $coffeeCost = getCoffeeCost($numberOfStudents);
 
 // Includo il layout richiesto
-$layoutFile = getLayoutFile();
+$layoutFile = getLayoutFilePath();
 include $layoutFile;

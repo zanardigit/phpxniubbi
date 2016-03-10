@@ -2,20 +2,34 @@
 header('Content-Type: text/html; charset=utf-8');
 
 /**
- * 26. Uso degli oggetti
- * @version 2016-03-07
+ * 26. Uso di costanti
+ * @version 2016-03-10
  */
+
+define("LAYOUTS_DIR", __DIR__ . "/layouts");
+define("DEFAULT_LAYOUT", LAYOUTS_DIR . "/home.php");
 
 require_once __DIR__ . '/functions.php';
 
-$course = new stdClass;
-$course->title              = "Corso Codemaster";
-$course->message            = "Benvenuti al corso PHP di CodeMaster!";
-$course->students           = getStudents();
-$course->numberOfStudents   = count($course->students);
+$url = filter_input(INPUT_SERVER, 'http_host');
+if ($url == "http://codemaster.local") {
+    $title = "Corso Codemaster";
+}
+else {
+    $title = "Ignoto";
+}
 
-$coffeeCost = getCoffeeCost($course->numberOfStudents);
+$message = "Benvenuti al corso PHP di CodeMaster!";
+$result = addStudent();
+if ($result == true) {
+    $message = "Nuovo studente aggiunto";
+}
+
+$students = getStudents();
+$numberOfStudents = count($students);
+$coffeeCost = getCoffeeCost($numberOfStudents);
+setCookies();
 
 // Includo il layout richiesto
-$layoutFile = getLayoutFile();
+$layoutFile = getLayoutFilePath();
 include $layoutFile;

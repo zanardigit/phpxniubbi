@@ -17,4 +17,10 @@ class Student
      */
     public $role;
 
+    /**
+     * Esegui il login nell'applicativo
+     */
+    public function login() {
+        // traccia l'ingresso di uno studente nel sistema
+    }
 }

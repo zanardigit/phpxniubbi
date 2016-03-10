@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 /**
  * 22. Sessione
- * @version 2016-03-07
+ * @version 2016-03-10
  */
 
 require_once __DIR__ . '/functions.php';
@@ -26,5 +26,5 @@ if (empty($_SESSION['id_visitatore'])) {
 }
 
 // Includo il layout richiesto
-$layoutFile = getLayoutFile();
+$layoutFile = getLayoutFilePath();
 include $layoutFile;

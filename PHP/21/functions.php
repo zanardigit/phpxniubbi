@@ -41,17 +41,15 @@ function getStudents()
  */
 function getLayoutFilePath()
 {
-    if ( ! isset($_GET['page'])) {
+    $requestedPage = filter_input(INPUT_GET, 'page');
+    if (empty($requestedPage)) {
         return __DIR__ . "/layouts/home.php";
     }
-
-    $requestedPage = $_GET['page'];
 
     $layoutFile = __DIR__ . "/layouts/$requestedPage.php";
-
-    if (file_exists($layoutFile)) {
-        return $layoutFile;
-    } else {
+    if ( ! file_exists($layoutFile)) {
         return __DIR__ . "/layouts/home.php";
     }
+
+    return $layoutFile;
 }

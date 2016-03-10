@@ -11,6 +11,7 @@
             <a href="index.php?page=summary">Summary</a>
         </nav>
         <h1><?= $message ?></h1>
-        <h2>Pagina dei risultati</h2>
+        <p>Il numero degli studenti è <?= $numberOfStudents ?></p>
+        <p>Il costo totale del caffè è <?= $coffeeCost ?></p>
     </body>
 </html>

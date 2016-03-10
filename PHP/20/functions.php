@@ -46,12 +46,11 @@ function getLayoutFilePath()
     }
 
     $requestedPage = $_GET['page'];
-
     $layoutFile = __DIR__ . "/layouts/$requestedPage.php";
-
-    if (file_exists($layoutFile)) {
-        return $layoutFile;
-    } else {
+    if ( ! file_exists($layoutFile)) {
         return __DIR__ . "/layouts/home.php";
+
     }
+
+    return $layoutFile;
 }

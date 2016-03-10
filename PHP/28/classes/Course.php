@@ -2,6 +2,7 @@
 
 class Course
 {
+
     /**
      * Titolo del corso
      *
@@ -24,12 +25,10 @@ class Course
     public $students;
 
     /**
-     * Restituisce il conteggio totale degli studenti
+     * Conteggio totale degli studenti
      *
-     * @return int
+     * @var int
      */
-    public function getNumberOfStudents()
-    {
-        return count($this->students);
-    }
+    public $numberOfStudents;
+
 }

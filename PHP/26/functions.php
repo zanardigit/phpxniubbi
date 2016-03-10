@@ -24,20 +24,24 @@ function getStudents()
 {
     $fileHandle = fopen(__DIR__ . '/students.csv', 'r');
     if (empty($fileHandle)) {
-        return array();
+        return [];
     }
 
-    $students = array();
+    $students = [];
     while ($data = fgetcsv($fileHandle)) {
-        if ($data === false) {
-            break;
-        }
-        $student = new stdClass();
-        $student->name = $data[0];
-        $student->role = $data[1];
-        $students[] = $student;
+
+        $nome = $data[0];
+        $password = $data[1];
+        $codice = $data[2];
+        $ruolo = $data[3];
+
+        $students[$codice] = array(
+            'nome' => $nome,
+            'password' => $password,
+            'codice' => $codice,
+            'ruolo' => $ruolo
+        );
     }
-    fclose($fileHandle);
 
     return $students;
 }
@@ -74,6 +78,8 @@ function addStudent()
 
     $fields = array(
         filter_input(INPUT_POST, 'name'),
+        filter_input(INPUT_POST, 'password'),
+        filter_input(INPUT_POST, 'code'),
         filter_input(INPUT_POST, 'role'),
     );
 
@@ -96,18 +102,17 @@ function addStudent()
  *
  * @return string
  */
-function getLayoutFile()
+function getLayoutFilePath()
 {
-    // Usare "filter_input" è più sicuro che accedere direttamente alla
-    // variabile globale
     $requestedPage = filter_input(INPUT_GET, 'page');
-
-    $layoutFile = __DIR__ . "/layouts/$requestedPage.php";
-
-    if (file_exists($layoutFile)) {
-        return $layoutFile;
-    } else {
-        return __DIR__ . "/layouts/home.php";
+    if (empty($requestedPage)) {
+        return DEFAULT_LAYOUT;
     }
-}
 
+    $layoutFile = LAYOUTS_DIR . "/$requestedPage.php";
+    if ( ! file_exists($layoutFile)) {
+        return DEFAULT_LAYOUT;
+    }
+
+    return $layoutFile;
+}

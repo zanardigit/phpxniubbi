@@ -34,21 +34,22 @@ function getStudents()
 
 /**
  * Restituisce il percorso completo del file da includere in base alla pagina
- * richiesta. Se tale file non esiste, restituisce il file di default (home).
+ * richiesta. Se non è stata richiesta alcuna pagina, o se il relativo file non
+ * esiste, restituisce il file di default (home).
  *
  * @return string
  */
-function getLayoutFile()
+function getLayoutFilePath()
 {
-    // Usare "filter_input" è più sicuro che accedere direttamente alla
-    // variabile globale
     $requestedPage = filter_input(INPUT_GET, 'page');
-
-    $layoutFile = __DIR__ . "/layouts/$requestedPage.php";
-
-    if (file_exists($layoutFile)) {
-        return $layoutFile;
-    } else {
+    if (empty($requestedPage)) {
         return __DIR__ . "/layouts/home.php";
     }
+
+    $layoutFile = __DIR__ . "/layouts/$requestedPage.php";
+    if ( ! file_exists($layoutFile)) {
+        return __DIR__ . "/layouts/home.php";
+    }
+
+    return $layoutFile;
 }
