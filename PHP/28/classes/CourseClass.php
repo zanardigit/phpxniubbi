@@ -1,6 +1,6 @@
 <?php
 
-class Course
+class CourseClass
 {
 
     /**
@@ -25,10 +25,16 @@ class Course
     public $students;
 
     /**
-     * Conteggio totale degli studenti
-     *
-     * @var int
+     * Ritorna il conteggio degli studenti
      */
-    public $numberOfStudents;
+    public function getNumberOfStudents()
+    {
+        $tempArray = $this->students;
+        $numberOfStudents = count($tempArray);
+        return $numberOfStudents;
+
+        return count($this->students);
+    }
 
 }
+

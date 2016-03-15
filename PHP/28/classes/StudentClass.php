@@ -11,11 +11,18 @@ class Student
     public $name;
 
     /**
-     * Ruolo dello studente
+     * Password dello studente
      *
-     * @var string $role;
+     * @var string $password;
      */
-    public $role;
+    public $password;
+
+    /**
+     * Matricola dello studente
+     *
+     * @var string $code;
+     */
+    public $code;
 
     /**
      * Esegui il login nell'applicativo

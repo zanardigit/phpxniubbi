@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title><?= $course->title ?></title>
+        <title><?= $codemaster->title ?></title>
     </head>
     <body>
         <nav>
@@ -10,10 +10,10 @@
             <a href="index.php?page=summary">Summary</a>
             <a href="index.php?page=results">Results</a>
         </nav>
-        <h1><?= $course->message ?></h1>
+        <h1><?= $codemaster->message ?></h1>
         <h2>Elenco degli studenti</h2>
         <ul>
-           <?php foreach ($course->students as $student): ?>
+           <?php foreach ($codemaster->students as $student): ?>
                 <li>
                     <strong style="color: red">
                         <?= $student['codice']?>
